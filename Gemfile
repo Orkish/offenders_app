@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'httparty'
+gem 'nokogiri'
 gem 'pry'
 
 # Use SCSS for stylesheets
