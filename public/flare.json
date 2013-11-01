@@ -1,0 +1,62 @@
+{
+ "name": "Manhattan",
+ "children": [
+  {
+   "name": "FIND MEEEE",
+   "children": [
+    {
+     "name": "WESLEY",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "WINSON",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "SUNMI",
+   "children": [
+    {
+     "name": "interpolate",
+     "children": [
+      {"name": "ArrayInterpolator", "size": 1983},
+      {"name": "ColorInterpolator", "size": 2047},
+      {"name": "DateInterpolator", "size": 1375},
+      {"name": "Interpolator", "size": 8746},
+      {"name": "MatrixInterpolator", "size": 2202},
+      {"name": "NumberInterpolator", "size": 1382},
+      {"name": "ObjectInterpolator", "size": 1629},
+      {"name": "PointInterpolator", "size": 1675},
+      {"name": "RectangleInterpolator", "size": 2042}
+     ]
+    },
+    {
+     "name": "interpolation",
+     "children": [
+      {"name": "ArrayInterpolator", "size": 1983},
+      {"name": "ColorInterpolator", "size": 2047},
+      {"name": "DateInterpolator", "size": 1375},
+      {"name": "Interpolator", "size": 8746},
+      {"name": "MatrixInterpolator", "size": 2202},
+      {"name": "NumberInterpolator", "size": 1382},
+      {"name": "ObjectInterpolator", "size": 1629},
+      {"name": "PointInterpolator", "size": 1675},
+      {"name": "RectangleInterpolator", "size": 2042}
+     ]
+    }
+   ]
+  }
+ ]
+}
