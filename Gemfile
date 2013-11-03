@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'bson_ext'
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'httparty'
 gem 'nokogiri'

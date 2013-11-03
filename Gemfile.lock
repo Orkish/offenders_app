@@ -38,6 +38,7 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bson (2.0.0.rc3)
+    bson_ext (1.5.1)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.1)
@@ -137,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   coffee-rails (~> 4.0.0)
   httparty
   jbuilder (~> 1.2)

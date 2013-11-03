@@ -1,12 +1,13 @@
 require 'open-uri'
+require 'pry'
 
-zip = {}
-areas = {}
-city = {}
+City.delete_all
+Area.delete_all
+Zipcode.delete_all
+Person.delete_all
 
-city[:name] = "Manhattan"
-areas[:children] = zip
-city[:children] = areas
+
+area_array = ["Central Harlem", "Chelsea Clinton", "East Harlem", "Gramercy Park & Murray Hill", "Greenwich Village & Soho", "Lower Manhattan", "Lower East Side", "Upper East Side", "Upper West Side", "Inwood & Washington Heights"]
 
 
 area_seed = {
@@ -22,27 +23,61 @@ area_seed = {
 	"Inwood & Washington Heights" => [10031, 10032, 10033, 10034, 10040]
 }
 
-area_seed do |k,v|
-	areas[:name] = k
-	areas[:children] << v
+manhattan = City.create(name: "Manhattan")
+
+# area_array.each do |x|
+# 	area = Area.create(name: x)
+# 	manhattan.children << area
+# end
+
+
+area_seed.each do |key, value|
+	puts "Creating the Area!"
+	@area = Area.create(name: key)
+	puts @area
+	value.each do |v|
+		puts "#{v} is the value!"
+		puts "Creating the zips"
+		zip = Zipcode.create(name: v.to_s)
+		puts zip.name
+		puts @area.name
+		puts "Insterting zips into area.children"
+		@area.children << zip
+		@area.save
+		@area.save(validate: false)
+		binding.pry
+		puts @area.children
+	end
+	manhattan.children << @area
+end
+
+
+
+
+
+# area_seed.each do |k,v|
+# 	area = Area.create(name: k)
+# 	manhattan.children << area
+# 	zip = Zipcode.create(name: v)
+# 	area.children << zip.name
 	
-end	
+# end	
 
 
 
-page = Nokogiri::HTML(open("http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp?offenderSubmit=true&LastName=&County=31&Zip=10011&Submit=Search"))
+# page = Nokogiri::HTML(open("http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp?offenderSubmit=true&LastName=&County=31&Zip=10011&Submit=Search"))
 
-name = []
-table = page.css('table')
+# name = []
+# table = page.css('table')
 
-data = page.css('table').search('td')
+# data = page.css('table').search('td')
 
-data.each do |row|
-	name << row.children.text
-end
+# data.each do |row|
+# 	name << row.children.text
+# end
 
-name.shift
+# name.shift
 
-name.each do |name|
-	puts name
-end
+# name.each do |name|
+# 	puts name
+# end
