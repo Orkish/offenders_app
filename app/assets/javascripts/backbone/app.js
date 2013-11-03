@@ -13,5 +13,5 @@ $(function() {
   Backbone.history.on('route', function() {
     var fragment = Backbone.history.getFragment();
     console.log(fragment);
-  })
+  });
 });
