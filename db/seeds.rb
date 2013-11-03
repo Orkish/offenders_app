@@ -67,23 +67,48 @@ area_seed.each do |key,value|
 
 end
 
-area = []
+# zip = []
+# @zips = Zipcodes.all
 
+# n = 0
+
+# @zips.each do |z|
+#    zip << {name: z.name, children: []}  
+#    z.people.each do |p|  
+#      zip[n][:children] << {name: p.name, size: 2000}
+#    end
+#    n+= 1
+#  end   
+
+area = []
 @areas = Area.all
 
-# @areas.each do |a|
-# 	area << {name: a.name, children: a.zipcodes}
-# end
-
 i = 0
+n = 0
 
 @areas.each do |a|
-   area << {name: a.name, children: []}  
-   a.zipcodes.each do |z|  
-     area[i][:children] << {name: z.name, children: []}
-   end
-   i+= 1
- end   
+	# FOR EACH AREA, CREATES AN ELEMENT OF NAME: AREA, WITH CHILDREN = EMPTY ARRAY.
+  area << {name: a.name, children: []} 
+
+  # FOR EACH AREA'S ZIPCODE, CREATES THE ZIPCODE OBJ, AND PUTS IT IN THE AREA'S CHILDREN ARRAY.
+  a.zipcodes.each do |z|
+  	n = 0
+    area[i][:children] << {name: z.name, children: []}
+    z.people.each do |p|
+    	area[i][:children][n][:children] << {name: p.name, size: 2000}
+    end
+   n +=1
+  end
+  i+= 1
+end
+
+city = {name: "Manhattan", children: area}
+
+file = "offenders.json"
+
+File.open(file,"w+") do |stuff|
+	stuff << city
+end
 
 binding.pry
 
