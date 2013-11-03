@@ -6,8 +6,10 @@ Area.delete_all
 Zipcode.delete_all
 Person.delete_all
 
+zip_array = []
 
-area_array = ["Central Harlem", "Chelsea Clinton", "East Harlem", "Gramercy Park & Murray Hill", "Greenwich Village & Soho", "Lower Manhattan", "Lower East Side", "Upper East Side", "Upper West Side", "Inwood & Washington Heights"]
+
+# area_array = ["Central Harlem", "Chelsea Clinton", "East Harlem", "Gramercy Park & Murray Hill", "Greenwich Village & Soho", "Lower Manhattan", "Lower East Side", "Upper East Side", "Upper West Side", "Inwood & Washington Heights"]
 
 
 area_seed = {
@@ -31,28 +33,77 @@ manhattan = City.create(name: "Manhattan")
 # end
 
 
-area_seed.each do |key, value|
-	puts "Creating the Area!"
+area_seed.each do |key,value|
+
+	# CREATES AN AREA FOR EACH AREA.
 	@area = Area.create(name: key)
-	puts @area
+
 	value.each do |v|
-		puts "#{v} is the value!"
-		puts "Creating the zips"
-		zip = Zipcode.create(name: v.to_s)
-		puts zip.name
-		puts @area.name
-		puts "Insterting zips into area.children"
-		@area.children << zip
-		@area.save
-		@area.save(validate: false)
-		binding.pry
-		puts @area.children
+
+		# FOR EACH AREA'S ZIP, IT SCRAPES THE PEOPLE in #{v} and reinitializes the person_name array
+		person_name = []
+		page = Nokogiri::HTML(open("http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp?offenderSubmit=true&LastName=&County=31&Zip=#{v}&Submit=Search"))
+		data = page.css('table').search('td')
+
+		# FOR EACH ROW OF DATA, IT APPENDS THE PERSON'S NAME into person_name array
+		data.each do |row|
+			person_name << row.children.text
+		end
+
+		# SHIFTING THE FIRST ROW...
+		person_name.shift
+
+		# CREATES THE ZIPCODE OBJECT
+		@zip = Zipcode.create(name: v)
+
+		# CREATES THE PERSON and APPENDS THE PERSON INTO THE ZIP
+		person_name.each do |p|
+			@person = Person.create(name: p)
+			@zip.people << @person
+		end
+		
+		@area.zipcodes << @zip
 	end
-	manhattan.children << @area
+
 end
 
+area = []
+
+@areas = Area.all
+
+# @areas.each do |a|
+# 	area << {name: a.name, children: a.zipcodes}
+# end
+
+i = 0
+
+@areas.each do |a|
+   area << {name: a.name, children: []}  
+   a.zipcodes.each do |z|  
+     area[i][:children] << {name: z.name, children: []}
+   end
+   i+= 1
+ end   
+
+binding.pry
 
 
+
+# area_seed.each do |key, value|
+# 	puts "Creating a new Zip array!"
+# 	zip_array = []
+# 	value.each do |v|
+# 		puts "#{v} is the value!"
+# 		puts "Creating the zips"
+# 		zip = Zipcode.create(name: v.to_s)
+# 		puts zip.name
+# 		puts "Putting zip in zip_array!"
+# 		# binding.pry
+# 		zip_array << zip
+# 	end
+# 	binding.pry
+# 	@area = Area.create(name:key, children: zip_array)
+# end
 
 
 # area_seed.each do |k,v|
@@ -65,19 +116,15 @@ end
 
 
 
-# page = Nokogiri::HTML(open("http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp?offenderSubmit=true&LastName=&County=31&Zip=10011&Submit=Search"))
+page = Nokogiri::HTML(open("http://www.criminaljustice.ny.gov/SomsSUBDirectory/search_index.jsp?offenderSubmit=true&LastName=&County=31&Zip=10011&Submit=Search"))
 
-# name = []
-# table = page.css('table')
+person_name = []
+table = page.css('table')
 
-# data = page.css('table').search('td')
+data = page.css('table').search('td')
 
-# data.each do |row|
-# 	name << row.children.text
-# end
+data.each do |row|
+	person_name << row.children.text
+end
 
-# name.shift
-
-# name.each do |name|
-# 	puts name
-# end
+person_name.shift
