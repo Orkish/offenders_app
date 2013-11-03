@@ -1,9 +1,10 @@
 var app = app || {};
 
 app.Person = Backbone.Model.extend({
-  idAttribute: 'slug',
-  name: '',
-  size: '',
+  defaults: {
+    name: '',
+    size: 2000
+  },
 
-  urlRoot: '/person'
+  urlRoot: '/index'
 });
