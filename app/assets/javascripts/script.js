@@ -24,7 +24,8 @@ $(function(){
         .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
 
     node.append("circle")
-        .attr("r", function(d) { return d.r; });
+        .attr("r", function(d) { return d.r; })
+        .attr("class", "bubbly");
 
     node.filter(function(d) { return !d.children; }).append("text")
         .attr("dy", ".3em")
