@@ -1,12 +1,12 @@
-var app = app || {};
+// var app = app || {};
 
-app.City = Backbone.Model.extend({
-  defaults: {
-    name: 'Manhattan'
-  },
+// app.City = Backbone.Model.extend({
+//   defaults: {
+//     name: 'Manhattan'
+//   },
 
-  children: new Array(),
+//   children: new Array(),
 
-  urlRoot: '/index'
+//   urlRoot: '/index'
 
-});
+// });

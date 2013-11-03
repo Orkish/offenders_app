@@ -1,11 +1,11 @@
-var app = app || {};
+// var app = app || {};
 
-app.Zipcode = Backbone.Model.extend({
-  defaults: {
-    name: ''
-  },
-  children: new Array(),
+// app.Zipcode = Backbone.Model.extend({
+//   defaults: {
+//     name: ''
+//   },
+//   children: new Array(),
 
-  url: '/index'
+//   url: '/index'
 
-});
+// });

@@ -1,7 +1,7 @@
-var app = app || {};
+// var app = app || {};
 
-app.People = Backbone.Collection.extend({
+// app.People = Backbone.Collection.extend({
   
-  model: app.Person,
-  url: '/index'
-});
+//   model: app.Person,
+//   url: '/index'
+// });
