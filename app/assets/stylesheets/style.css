@@ -1,13 +1,15 @@
 circle {
-  fill: rgb(31, 119, 180);
-  fill-opacity: .25;
-  stroke: rgb(31, 119, 180);
+  fill: rgba(113, 200, 238, .25);
+  stroke: rgb(156, 77, 77);
   stroke-width: 1px;
 }
 
+circle:hover {
+  fill: rgba(113, 200, 238, .9);
+}
+
 .leaf circle {
-  fill: #ff7f0e;
-  fill-opacity: 1;
+  fill: rgba(42, 228, 203, 1);
 }
 
 text {

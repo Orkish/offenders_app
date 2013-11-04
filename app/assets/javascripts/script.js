@@ -25,12 +25,8 @@ $(function(){
         .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
 
     node.append("circle")
-        .attr("r", function(d) { return d.r; });
-        
-    // Neighborhoods
-    // node.filter(function(d) { return d.children; }).append("text")
-    //     .attr("dy", "-6em")
-    //     .text(function(d) { return d.name.substring(0, d.r / 3); });
+        .attr("r", function(d) { return d.r; })
+        .attr("class", "bubbly");
 
     // People
     node.filter(function(d) { return !d.children; }).append("text")
