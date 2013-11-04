@@ -1,9 +1,12 @@
-var $big_circle = $('circle').first();
+var $person,
+    $circle;
 
 $(function(){
 
+  $circle = $('.circle-title');
+
   var diameter = 960,
-      format = d3.format(",d");
+    format = d3.format(",d");
 
   var pack = d3.layout.pack()
       .size([diameter - 4, diameter - 4])
@@ -22,15 +25,12 @@ $(function(){
         .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-    node.filter(function(d) { return d.children; }).append("text")
-        .attr("dy", "-6em")
-        .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
+    node.append("title")
+        .text(function(d) { return d.name; });// + (d.children ? "" : ": " + format(d.size)); });
 
     node.append("circle")
-        .attr("r", function(d) { return d.r; })
-        .attr("class", "bubbly");
+        .attr("r", function(d) { return d.r; });
 
-    // People
     node.filter(function(d) { return !d.children; }).append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
@@ -39,9 +39,14 @@ $(function(){
 
   d3.select(self.frameElement).style("height", diameter + "px");
 
-
-
-  $big_circle.css('fill', 'pink');
-  // $('html').css('background-color', 'pink');
+  setTimeout(function(){$('.leaf.node').on("mouseover", function(){
+    $circle.text(($(this).context.textContent));
+    })
+  },100)
+    
 
 });
+
+$(function(){
+
+})

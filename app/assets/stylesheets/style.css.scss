@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Lora);
+
+$font: 'Lora', serif;
+
+body {
+	background-color: #fff;
+	font-family: $font;
+	h1 {
+		font-size: 2em;
+		color: black;
+	}
+	.bubble {
+		text-align: center;
+	}
+	.circle-title{
+		text-align: center;
+	}
+}
+
+circle {
+  fill: rgba(113, 200, 238, .25);
+  stroke: rgb(156, 77, 77);
+  stroke-width: 1px;
+  
+  &:hover {
+  	fill: rgba(113, 200, 238, .9);
+  }
+}
+
+.leaf circle {
+  fill: rgba(42, 228, 203, 1);
+}
+
+/*text {
+  font: 10px sans-serif;
+}
+*/
+/*.node text {
+	font-size: 30px;
+}
+
+.leaf text {
+	font-size: 10px;	
+}
+*/
