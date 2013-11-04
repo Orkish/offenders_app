@@ -1,3 +1,17 @@
 // Place all the styles related to the offenders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$font: Helvetica, sans-serif;
+
+body {
+	font: $font;
+	width: 960px;
+	margin: 0 auto;
+}
+
+.bubbly {
+	color: #0B0F19;
+}
+
