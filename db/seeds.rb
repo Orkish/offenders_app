@@ -95,7 +95,7 @@ n = 0
   	n = 0
     area[i][:children] << {name: z.name, children: []}
     z.people.each do |p|
-    	area[i][:children][n][:children] << {name: p.name, size: 2000}
+    	area[i][:children][n][:children] << {name: p.name, size: 200}
     end
    n +=1
   end
@@ -104,13 +104,15 @@ end
 
 city = {name: "Manhattan", children: area}
 
+city = city.to_json
+
 file = "offenders.json"
 
 File.open(file,"w+") do |stuff|
 	stuff << city
 end
 
-binding.pry
+
 
 
 
