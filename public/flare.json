@@ -1,20 +1,20 @@
 {
-	:name=>"Manhattan",
-	:children=>[
+	"name": "Manhattan",
+	"children": [
 	{
-		:name=>"Upper East Side",
-		 :children=>[
+		"name": "Upper East Side",
+		 "children": [
 		 {
-		 	:name=>"10021",
-		 	:children=>[
-		 	{:name=>" ABDUL-HAKEEM, AS-SUFI ", :size=>2000},
-		 	{:name=>" ABERNATHY, ANDRE ", :size=>2000},
-		 	{:name=>" ACEVEDO, JEFFERY ", :size=>2000},
-		 	{:name=>" ACEVEDO, JEFREY ", :size=>2000},
-		 	{:name=>" ACOSTA, CARLOS ", :size=>2000},
-		 	{:name=>" ACOSTA, CARLOS ", :size=>2000},
-		 	{:name=>" ACOSTA, SAMUEL ", :size=>2000},
-		 	{:name=>" ADAMS, DONNIE ", :size=>2000}
+		 	"name": "10021",
+		 	"children": [
+		 	{"name": " ABDUL-HAKEEM, AS-SUFI ", "size": 2000},
+		 	{"name": " ABERNATHY, ANDRE ", "size": 2000},
+		 	{"name": " ACEVEDO, JEFFERY ", "size": 2000},
+		 	{"name": " ACEVEDO, JEFREY ", "size": 2000},
+		 	{"name": " ACOSTA, CARLOS ", "size": 2000},
+		 	{"name": " ACOSTA, CARLOS ", "size": 2000},
+		 	{"name": " ACOSTA, SAMUEL ", "size": 2000},
+		 	{"name": " ADAMS, DONNIE ", "size": 2000}
 		 	]
 		 }
 		 ]
