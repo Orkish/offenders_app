@@ -20,12 +20,19 @@ $(function(){
         .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-    node.append("title")
+    node.filter(function(d) { return d.children; }).append("text")
+        .attr("dy", "-6em")
         .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
 
     node.append("circle")
         .attr("r", function(d) { return d.r; });
+        
+    // Neighborhoods
+    // node.filter(function(d) { return d.children; }).append("text")
+    //     .attr("dy", "-6em")
+    //     .text(function(d) { return d.name.substring(0, d.r / 3); });
 
+    // People
     node.filter(function(d) { return !d.children; }).append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")

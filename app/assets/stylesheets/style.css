@@ -13,3 +13,11 @@ circle {
 text {
   font: 10px sans-serif;
 }
+
+.node text {
+	font-size: 30px;
+}
+
+.leaf text {
+	font-size: 10px;	
+}
