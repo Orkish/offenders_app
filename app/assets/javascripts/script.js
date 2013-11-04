@@ -1,3 +1,5 @@
+var $big_circle = $('circle').first();
+
 $(function(){
 
   var diameter = 960,
@@ -36,4 +38,10 @@ $(function(){
   });
 
   d3.select(self.frameElement).style("height", diameter + "px");
+
+
+
+  $big_circle.css('fill', 'pink');
+  // $('html').css('background-color', 'pink');
+
 });
