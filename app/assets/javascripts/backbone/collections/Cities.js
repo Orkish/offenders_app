@@ -1,8 +1,8 @@
-var app = app || {};
+// var app = app || {};
 
-app.Cities = Backbone.Collection.extend({
-  model: app.City,
+// app.Cities = Backbone.Collection.extend({
+//   model: app.City,
 
-  url: '/index'
+//   url: '/index'
 
-});
+// });

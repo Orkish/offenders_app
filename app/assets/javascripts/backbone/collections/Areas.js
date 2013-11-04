@@ -1,8 +1,8 @@
-var app = app || {};
+// var app = app || {};
 
-app.Areas = Backbone.Collection.extend({
-  model: app.Area,
+// app.Areas = Backbone.Collection.extend({
+//   model: app.Area,
 
-  url: '/index'
+//   url: '/index'
 
-});
+// });

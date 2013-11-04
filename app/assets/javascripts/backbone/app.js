@@ -1,17 +1,17 @@
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
+// //= require_tree ./models
+// //= require_tree ./collections
+// //= require_tree ./views
+// //= require_tree ./routers
 
-var app = app || {};
+// var app = app || {};
 
-$(function() {
+// $(function() {
 
-  app.router = new app.Router();
+//   app.router = new app.Router();
 
-  Backbone.history.start();
-  Backbone.history.on('route', function() {
-    var fragment = Backbone.history.getFragment();
-    console.log(fragment);
-  });
-});
+//   Backbone.history.start();
+//   Backbone.history.on('route', function() {
+//     var fragment = Backbone.history.getFragment();
+//     console.log(fragment);
+//   });
+// });

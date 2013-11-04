@@ -1,6 +1,6 @@
-var app = app || {};
+// var app = app || {};
 
-app.Zipcodes = Backbone.Collection.extend({
-  model: app.Zipcode,
-  url: '/index'
-});
+// app.Zipcodes = Backbone.Collection.extend({
+//   model: app.Zipcode,
+//   url: '/index'
+// });
