@@ -5,7 +5,7 @@ This is a rails 4 app created during an internal hackathon.
 For this app we used d3.js data visualization to display the data we collect.
 
 Unfortunately the API we wanted to use from the New York Justice Department would take a few days for approval.
-Days we did not have. We turned to Nokogiri to scrape the data from the tables they had. 
+Days we did not have. We turned to Nokogiri to scrape the data from the tables on the website. 
 
 We used the data to show all the major sex offenders in New York City and displayed it using a bubble canvas with d3.js
 
