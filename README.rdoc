@@ -1,28 +1,12 @@
-== README
+== Offenders App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a rails 4 app created during an internal hackathon.
 
-Things you may want to cover:
+For this app we used d3.js data visualization to display the data we collect.
 
-* Ruby version
+Unfortunately the API we wanted to use from the New York Justice Department would take a few days for approval.
+Days we did not have. We turned to Nokogiri to scrape the data from the tables they had. 
 
-* System dependencies
+We used the data to show all the major sex offenders in New York City and displayed it using a bubble canvas with d3.js
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thanks for check this out!
